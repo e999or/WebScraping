@@ -18,12 +18,12 @@ public interface ApiClient {
             );
 
 //    @RequestMapping
-//            (method = RequestMethod.GET,value ="/historical/{date}.json?app_id=f2aa75f4b0f04ad9bcb2157a8e5fbd98")
+//            (method = RequestMethod.GET, value ="/historical/{date}.json?app_id=f2aa75f4b0f04ad9bcb2157a8e5fbd98")
 //    ExchangeFields readExchangeDataPast(
+//            @PathVariable("date") String date,
 //            @PathVariable("exchangeFields") String exchangeFields,
 //            @PathVariable("rates") Map<String, String> rates
 //    );
-
 
 
 }

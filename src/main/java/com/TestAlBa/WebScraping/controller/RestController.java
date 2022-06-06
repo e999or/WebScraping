@@ -1,5 +1,6 @@
 package com.TestAlBa.WebScraping.controller;
 
+import com.TestAlBa.WebScraping.Clock;
 import com.TestAlBa.WebScraping.client.ApiClient;
 import com.TestAlBa.WebScraping.rest.response.ExchangeFields;
 
@@ -16,6 +17,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class RestController {
     private final ApiClient apiClient;
+    String date = Clock.date();
 
     @GetMapping
     public ResponseEntity readExchangeData (@RequestParam(required = false)  String exchangeFields, Map<String, String> rates) {
@@ -24,11 +26,12 @@ public class RestController {
         ExchangeFields s = responseEntity.getBody();
         System.out.println(s.getRates().get("RUB"));
         // поставить проверку на ноль
-
-       // ResponseEntity<ExchangeFields> responseEntity1 =  ResponseEntity.ok(apiClient.readExchangeDataPast(exchangeFields, rates));
-
+//
+//        ResponseEntity<ExchangeFields> responseEntity1 =  ResponseEntity.ok(apiClient.readExchangeDataPast(date, exchangeFields, rates));
+//        ExchangeFields s = responseEntity1.getBody();
+//        System.out.println(s.getRates().get("RUB"));
+//        return responseEntity1;
         return responseEntity;
-
     }
 
 }
